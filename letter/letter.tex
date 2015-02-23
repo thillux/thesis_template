@@ -1,0 +1,50 @@
+\documentclass[%
+ DIV=17,%
+ enlargefirstpage=true,
+ fontsize=11pt,%
+ fromalign=right,%
+ fromlogo,%
+ fromrule=afteraddress,%
+ ngerman,%
+ paper=a4,%
+ parskip=half*,
+ version=last%
+ ]{scrlttr2}
+
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+
+\LoadLetterOption{DIN}
+
+\setkomavar{fromname}{Hans Dampf}
+\setkomavar{fromaddress}{Straße 6\\98693 Ilmenau}
+\setkomavar{fromphone}{+49 Telefonnummer}
+\setkomavar{fromemail}{hans.dampf@tu-ilmenau.de}
+\setkomavar{fromlogo}{\includegraphics[height=3\baselineskip]{tui_logo}}
+\setkomavar{location}{\raggedright}
+
+\setkomavar{place}{Ilmenau}
+\setkomavar{signature}{Hans Dampf}
+
+\setkomavar{subject}{Brief mit Bezug zur Masterarbeit}
+
+\setkomavar{date}{\today}
+
+\setkomavar{firstfoot}{\centering \arabic{page} / \pageref{LastPage}}
+
+\begin{document}
+\begin{letter}{Empfängername\\
+		Empfängeraddresse}
+\opening{Sehr geehrte Damen und Herren,}
+
+\closing{\raggedright Mit freundlichen Grüßen,}
+\vspace*{3.0\baselineskip}
+\label{LastPage}
+\end{letter}
+\end{document}
+
+

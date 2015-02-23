@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+
+Import('*')
+
+pdfOutputLetter = texEnv.PDF('letter.tex')
+texEnv.Clean(pdfOutputLetter, 'letter.synctex.gz')
+
+Return('pdfOutputLetter')
+
+# vim: set filetype=python
