@@ -3,7 +3,7 @@
 Import('*')
 
 pdfOutputSlides = texEnv.PDF('slides.tex')
-Depends(pdfOutputSlides, [Glob('img/*.pdf')])
+Depends(pdfOutputSlides, [Glob('img/*.pdf'), Glob('sections/*.tex')])
 texEnv.Clean(pdfOutputSlides, 'slides.synctex.gz')
 
 Return('pdfOutputSlides')

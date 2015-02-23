@@ -1,0 +1,215 @@
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{bm}
+\usepackage[nice]{nicefrac}     % schräge Bruchstriche
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\floatname{algorithm}{Algorithmus}
+\renewcommand{\listalgorithmname}{Algorithmenverzeichnis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{bookmark}                           % Einstellungen für hyperref
+\usepackage{booktabs}                           % nice tables
+\usepackage[hang,flushmargin]{footmisc}         % schönere Fußzeile
+\usepackage{paralist}                           % neue Listen
+\usepackage{graphicx}                           % Einbinden von Abbildungen
+\usepackage{xcolor}                             % Farben
+\usepackage{lipsum}
+\usepackage{wrapfig}
+\usepackage[printonlyused]{acronym}             % Abbkürzungsverzeichnis
+\usepackage{blindtext}
+\usepackage{texnames}
+\usepackage{subcaption}
+\usepackage{ccicons}							% Creative Commons Icons
+\usepackage{nameref}							% ermöglicht Referenzierung von Abschnittstiteln
+
+\usepackage[style=ieee]{biblatex}
+\addbibresource{bib/books.bib}
+\addbibresource{bib/papers.bib}
+\addbibresource{bib/rfcs.bib}
+\addbibresource{bib/websources.bib}
+
+\renewcommand{\bibname}{Literaturverzeichnis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\usepackage{esvect}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{multicol}
+\setlength{\columnsep}{1em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\chead[]{}
+\automark[chapter]{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+\makeatletter
+\hypersetup{
+    unicode=true,                               % non-Latin characters in Acrobat’s bookmarks
+    colorlinks=true,                            % false: boxed links; true: colored links
+    linkcolor=black,                            % color of internal links
+    citecolor=black,                            % color of links to bibliography
+    filecolor=black,                            % color of file links
+    urlcolor=black,                             % color of external links
+    pdftoolbar=true,                            % show Acrobat’s toolbar?
+    pdfmenubar=true,                            % show Acrobat’s menu?
+    pdffitwindow=false,                         % window fit to page when opened
+    pdfstartview={FitH},                        % fits the width of the page to the window
+    pdfnewwindow=true,                          % links in new window
+    pdftitle={\@title},
+    pdfsubject={\TypDerArbeit},
+    pdfauthor={\@author},
+    pdfkeywords={\Schlagworte}
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% http://html5up.net/read-only
+\definecolor{thillux-green}{HTML}{4ACAA8}
+
+\definecolor{thillux-red}{HTML}{E7746F}
+
+\definecolor{thillux-grey}{HTML}{989898}
+
+\definecolor{thillux-blue}{HTML}{0E94EC}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,snakes}
+
+\tikzset{
+	% Styling of header text is done using key/value options for TikZ nodes. See
+	% section 16.4 of the PGF manual for a complete list of options that affect
+	% text.
+	headings/base/.style = {
+		% Zap node seperation, set text width and alignment.
+		outer sep = 0pt,
+		% Trim off 2/3rd of an em to compensate for the inner xsep which spaces the
+		% text nicely away from the left side, but causes the node to hang into the
+		% right margin.
+		text width = {\columnwidth - 0.6666em},
+		align = left
+	},
+	headings/chapter/.style = {
+		outer sep = 0pt,
+		inner sep = 0pt,
+		font = \huge,
+		text = thillux-blue,
+		align = left,
+		text width = \columnwidth
+	},
+	headings/section/.style = {
+		headings/base,
+		fill = thillux-blue,
+		font = \large,
+		minimum height = (1.6em),
+		rectangle,
+		rounded corners,
+		text = white,
+	},
+	headings/subsection/.style = {
+		headings/base,
+		fill = thillux-grey!65,
+		font = \large,
+		minimum height = (1.6em),
+		rectangle,
+		rounded corners,
+		text = white
+	}
+}
+\newcommand{\colorboxedsec}[2]{
+	\tikz{\node[headings/#1]{#2};}}
+
+\setkomafont{chapter}{\colorboxedsec{chapter}}
+\setkomafont{section}{\colorboxedsec{section}}
+\setkomafont{subsection}{\colorboxedsec{subsection}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{anforderung}
+\newcommand{\anfl}[1]{%
+\refstepcounter{anforderung}%
+(A\arabic{anforderung})%
+\label{anf:#1}%
+}
+
+\usepackage[toc,page]{appendix}
+
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=2.5em}
+
+\newcommand{\itemizeBox}{\hspace{1em}\raisebox{0.8ex}{\fcolorbox{thillux-blue}{thillux-blue!35}{}}}
+\newcommand{\itemizeArrow}{%
+	\raisebox{-0.1ex}{%
+		\resizebox{0.5em}{0.9em}{%
+			\begin{tikzpicture}%
+			\draw [fill=none,line width=20pt, color=thillux-red] (0,1)--(1,0)--(0,-1);%
+			\end{tikzpicture}%
+		}%
+	}%
+}
+
+\setlist[enumerate]{label=(\roman*)}
+
+\renewcommand{\labelitemi}{\itemizeArrow}
+\renewcommand{\labelitemii}{\itemizeBox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% example boxes
+
+\usetikzlibrary{calc}
+
+\newcommand{\TXExample}[1]{
+\begin{center}%
+	\begin{tikzpicture}%
+		\node [draw=none, fill=thillux-grey!35, very thick,
+		rectangle, inner sep=10pt, inner ysep=10pt] (box){%
+			\begin{minipage}{0.85\textwidth}%
+				#1%
+			\end{minipage}%
+		};%
+		\draw[line width=1.5ex, thillux-blue] ($(box.south west) + (0,0.6pt)$) |- ($(box.north west) - (0,0.6pt)$);%
+	\end{tikzpicture}%
+\end{center}%
+}
+
+\newcommand{\TXExampleWithTitle}[2]{
+	\begin{center}%
+		\begin{tikzpicture}%
+		\node [draw=none, fill=thillux-grey!35, very thick,
+		rectangle, inner sep=10pt, inner ysep=10pt] (box){%
+			\begin{minipage}{0.85\textwidth}%
+			#2%
+			\end{minipage}%
+		};%
+		\node [draw=none, fill=thillux-grey, very thick,
+		rectangle, inner sep=10pt, inner ysep=8pt] at ($(box.north) + (0,10.8pt)$) (boxtitle) {%
+			\begin{minipage}{0.85\textwidth}%
+			\color{white}\textbf{#1}%
+			\end{minipage}%
+		};
+		\draw[line width=1.5ex, thillux-blue] ($(box.south west) + (0,0.6pt)$) |- ($(boxtitle.north west) - (0,0.6pt)$);
+		\end{tikzpicture}%
+	\end{center}%
+}
+
+\usepackage{relsize}

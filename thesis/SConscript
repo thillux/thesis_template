@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+
+Import('*')
+
+pdfOutputThesis = texEnv.PDF('thesis.tex')
+Depends(pdfOutputThesis,  [Glob('img/*.pdf'), Glob('chapters/*.tex'), Glob('settings/*.tex')])
+texEnv.Clean(pdfOutputThesis, 'thesis.synctex.gz')
+
+Return('pdfOutputThesis')
+
+# vim: set filetype=python

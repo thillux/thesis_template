@@ -1,0 +1,75 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[%
+	paper=a4,
+	fontsize=11pt,
+	pagesize,
+	headings=small,
+	twoside=false,
+	bibliography=totocnumbered,
+	index=totoc,
+	listof=numbered,
+	chapterprefix,
+	DIV=17,
+	numbers=noenddot,
+	version=first
+]{scrreprt}
+
+\usepackage[ngerman,%
+	colorinlistoftodos,%
+	% disable,
+	shadow,%
+	color=thillux-grey!35,%
+	bordercolor=thillux-blue,%
+	linecolor=thillux-blue%
+]{todonotes}
+
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+% Definition von Autor, Schlagworten etc.
+\input{settings/thesisInfo}
+
+% Pakete und Optionen
+\input{settings/preambel}
+
+\begin{document}
+  \pagenumbering{roman}
+  \setcounter{page}{0}
+  % TITELSEITE %%%%%%%%%%%%%%%%%%%%%
+  \input{chapters/titelseite}
+  % TODOS &&&&&&&&&&&&&&&&&&&&&&&&&&
+  \listoftodos
+  \newpage
+  % ABSTRACT %%%%%%%%%%%%%%%%%%%%%%%
+  \input{chapters/abstract}
+  \newpage
+  \tableofcontents
+  \pagenumbering{arabic}
+  \input{chapters/einleitung}
+  \input{chapters/grundlagenUndStandDerTechnik}
+  \input{chapters/anforderungen}
+  \input{chapters/system}
+  \input{chapters/implementierung}
+  \input{chapters/evaluierung}
+  \input{chapters/zusammenfassungUndAusblick}
+  %
+  % ANHANG %%%%%%%%%%%%%%%%%%%%%%%%%
+  %
+  \part*{Anhang}
+  \appendix
+  % QUELLENVERZEICHNIS %%%%%%%%%%%%%
+  \printbibliography
+  % ABKÜRZUNGEN %%%%%%%%%%%%%%%%%%%%
+  \input{chapters/abkuerzungen}
+  % ABBILDUNGEN %%%%%%%%%%%%%%%%%%%%
+  \input{chapters/abbildungen}
+  % ABBILDUNGSSVERZEICHNIS %%%%%%%%%
+  \listoffigures
+  % ALGORITHMEN %%%%%%%%%%%%%%%%%%%%
+  \listofalgorithms
+  % THESEN %%%%%%%%%%%%%%%%%%%%%%%%%
+  \input{chapters/thesen}
+\end{document}

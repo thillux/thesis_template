@@ -1,0 +1,41 @@
+\makeatletter
+\begin{titlepage}
+\centering
+\sffamily
+% Upper part of the page
+\includegraphics [scale=0.9] {img/tui_logo}\\[1.5ex]
+{\bfseries\LARGE Technische Universität Ilmenau}\\[-0.3ex]
+{\Large \Fakultaet\\[0.5ex]\Fachgebiet}\\[3em]
+{\Large \TypDerArbeit}
+
+% Title
+\vspace{1em}
+\begin{tikzpicture}
+\node [text width = {\textwidth},
+	   align = center,
+	   fill = thillux-blue,
+	   font = \huge\bfseries,
+	   minimum height = (1.6em),
+	   rectangle,
+	   rounded corners,
+	   text = white,
+	   outer sep = 0pt,
+	   inner sep = 2ex] {\hyphenchar\font=-1\@title};
+\end{tikzpicture}
+
+\vspace{1ex}
+
+\vfill
+\begin{center}
+\begin{tabular}{rl}
+vorgelegt von:						& \quad \NameDesAutors\\		[1ex]
+eingereicht am:						& \quad \eingereichtAm\\		[1ex]
+geboren am:							& \quad \GeburtstagUndOrt\\		[1ex]
+Studiengang:						& \quad \Studiengang\\			[3ex]
+
+Verantwortlicher Hochschullehrer:	& \quad \Professor\\			[1ex]
+Wissenschaftlicher Betreuer:		& \quad \Betreuer\\
+\end{tabular}
+\end{center}
+\end{titlepage}
+\makeatother
