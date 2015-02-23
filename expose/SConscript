@@ -4,6 +4,9 @@ Import('*')
 
 pdfOutputExpose = texEnv.PDF('expose.tex')
 texEnv.Clean(pdfOutputExpose, 'expose.synctex.gz')
+timeTool = texEnv.Command('zeitplan.tex', 'zeitplan.json', "expose/timeAdjust.py $SOURCE $TARGET")
+texEnv.Depends(timeTool, "timeAdjust.py")
+texEnv.Depends(pdfOutputExpose, timeTool)
 
 Return('pdfOutputExpose')
 

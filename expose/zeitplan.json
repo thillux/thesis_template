@@ -1,0 +1,50 @@
+{
+    "referenceDate" : "",
+    "items" :[
+        {
+            "title" : "Stand der Technik",
+            "weeks" : 1,
+            "days"  : 0
+        },
+        {
+            "title" : "Anforderungen",
+            "weeks" : 3,
+            "days"  : 0
+        },
+        {
+            "title" : "Beschreibung des Protokolls",
+            "weeks" : 3,
+            "days"  : 0
+        },
+        {
+            "title" : "Implementierung und Beschreibung der Implementierungsdetails",
+            "weeks" : 5,
+            "days"  : 0
+        },
+        {
+            "title" : "Durchführung von Simulationen, Evaluierung und Dokumentierung der Ergebnisse",
+            "weeks" : 3,
+            "days"  : 0
+        },
+        {
+            "title" : "Einleitung",
+            "weeks" : 4,
+            "days"  : 0
+        },
+        {
+            "title" : "Fazit",
+            "weeks" : 3,
+            "days"  : 0
+        },
+        {
+            "title" : "Abschluss",
+            "weeks" : 1,
+            "days"  : 0
+        },
+        {
+            "title" :  "Abgabe",
+            "weeks" : 1,
+            "days"  : 0
+        }
+    ]
+}
