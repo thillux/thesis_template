@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+
+Import('*')
+
+pdfOutputSlides = texEnv.PDF('slides.tex')
+Depends(pdfOutputSlides, [Glob('img/*.pdf')])
+texEnv.Clean(pdfOutputSlides, 'slides.synctex.gz')
+
+Return('pdfOutputSlides')
+
+# vim: set filetype=python

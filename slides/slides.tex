@@ -1,0 +1,80 @@
+\documentclass{beamer}
+
+% Theme Parameter
+\useoutertheme{infolines}
+\useinnertheme[shadow]{rounded}
+\usecolortheme{seahorse}
+\usecolortheme{rose}
+\usefonttheme[onlylarge]{structurebold}
+
+% gets rid of navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Includes
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb}
+
+% use this for german titles
+% \usepackage{ngerman}
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+\title[SHORT TITLE]{TITLE}
+\author{AUTHOR'S NAME}
+\institute[TU Ilmenau]{%
+  \includegraphics[width=0.2\textwidth]{img/tui_logo}\\%
+  \large Ilmenau University of Technology
+}
+\date{\today}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+  \frametitle{}
+  \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+  {
+    \pagestyle{empty}
+    \begin{frame}
+      \titlepage
+    \end{frame}
+  }
+
+  \begin{frame}{Contents}
+    \tableofcontents
+  \end{frame}
+
+  \section{Introduction}
+  \input{sections/introduction}
+
+  \section{Basics and State of the Art}
+  \input{sections/basicsAndStateOfTheArt}
+
+  \section{SYSTEMNAME}
+  \input{sections/system}
+
+  \input{sections/evaluation}
+
+  \section{Conclusion and Outlook}
+  \input{sections/conclusion}
+
+  \section*{Ergänzungen}
+
+  \appendix
+
+  \backupbegin
+  \input{sections/backup}
+  \backupend
+\end{document}
