@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+
+Import('*')
+
+pdfOutputExpose = texEnv.PDF('expose.tex')
+texEnv.Clean(pdfOutputExpose, 'expose.synctex.gz')
+
+Return('pdfOutputExpose')
+
+# vim: set filetype=python

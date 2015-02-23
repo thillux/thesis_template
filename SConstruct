@@ -30,9 +30,14 @@ pdfOutputThesis = SConscript('thesis/SConscript', exports="texEnv")
 
 ########################################
 
+# expose
+pdfOutputExpose = SConscript('expose/SConscript', exports="texEnv")
+
+########################################
+
 # default targets
 
-Default(pdfOutputSlides, pdfOutputThesis)
+Default(pdfOutputSlides, pdfOutputThesis, pdfOutputExpose)
 
 ########################################
 
