@@ -7,9 +7,17 @@ German latex templates for thesis writing at Ilmenau University of Technology, t
 
 ## Prerequisites
 
+### General
 * [TeX Live](https://www.tug.org/texlive/) / [MiKTeX](http://miktex.org/) / your favourite LaTeX distribution
 * [Python 3](https://docs.python.org/3/)
 * [SCons](http://www.scons.org/)
+
+### Generating RFC BibTeX File 
+* [xsltproc](http://xmlsoft.org/XSLT/xsltproc2.html)
+* [curl](http://curl.haxx.se/)
+
+### Downloading RFCs
+* [curl](http://curl.haxx.se/)
 
 ## Usage
 
