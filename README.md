@@ -51,9 +51,10 @@ Letter template which can be used, if you need to request something with regard 
 * separate slide numbers for  backup slides (like 35/20)
 
 ## Contributors
-  * Carsten Hahn
-  * Lennard Pfennig
-  * Markus Theil
+* Martin Backhaus
+* Carsten Hahn
+* Lennard Pfennig
+* Markus Theil
 
 ## Credits
 
