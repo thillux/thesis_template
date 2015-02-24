@@ -7,9 +7,9 @@ German latex templates for thesis writing at Ilmenau University of Technology, t
 
 ## Prerequisites
 
-* TeX Live / MiKTeX / your favourite LaTeX distribution
-* Python 3
-* SCons
+* [TeX Live](https://www.tug.org/texlive/) / [MiKTeX](http://miktex.org/) / your favourite LaTeX distribution
+* [Python 3](https://docs.python.org/3/)
+* [SCons](http://www.scons.org/)
 
 ## Usage
 
@@ -17,7 +17,7 @@ German latex templates for thesis writing at Ilmenau University of Technology, t
  scons [expose|letter|slides|thesis]
 ```
 
-## Subfolders
+## Contents
 
 ### expose
 Document for the first stage of your thesis project. Write down your schedule and intended methods here.  
@@ -46,3 +46,9 @@ Letter template which can be used, if you need to request something with regard 
   * Carsten Hahn
   * Lennard Pfennig
   * Markus Theil
+
+## Credits
+
+* RFC bib file generator script from [Dr. Roland Bless](http://telematics.tm.kit.edu/staff_bless.php) in scripts/rfcs/bibtex
+* small snippets from sites like [Stack Overflow](https://www.stackoverflow.com/) are linked inside the respective files
+
