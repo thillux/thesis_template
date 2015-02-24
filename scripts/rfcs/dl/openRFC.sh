@@ -1,3 +1,3 @@
 #!/bin/sh
 
-vim rfc$1.txt
+vim txt/rfc$1.txt
