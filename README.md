@@ -53,9 +53,9 @@ Letter template which can be used, if you need to request something with regard 
 ## Contributors
 * Martin Backhaus
 * Carsten Hahn
+* René Köllmer
 * Lennard Pfennig
 * Markus Theil
-* René Köllmer
 
 ## Credits
 
