@@ -27,7 +27,7 @@ def printTimeForFunction(f):
 
 @printTimeForTeXInclude
 def process(texfile, outputFile):
-    with open("%s.tex" % texfile, 'r') as texFile:
+    with open("%s.tex" % texfile, 'r', encoding="utf-8") as texFile:
         lineNumber = 1
         for line in texFile:
             parts = line.split('%')
@@ -40,7 +40,7 @@ def process(texfile, outputFile):
                 logging.getLogger().info("include %s.tex:%i <-- %s.tex" % (texfile, lineNumber, includeFile.group("include")))
                 process(texfile=includeFile.group("include"), outputFile=outputFile)
             else:
-                outputFile.write(bytes(line, 'UTF-8'))
+                outputFile.write(line)
             lineNumber += 1
 
 @printTimeForFunction
@@ -65,7 +65,7 @@ def main():
 
     createLogger()
 
-    with open(args.outputFile + ".tex", 'wb') as outputFile:
+    with open(args.outputFile + ".tex", 'w', encoding="utf-8") as outputFile:
         process(texfile=args.inputFile, outputFile=outputFile)
 
 if __name__ == "__main__":
