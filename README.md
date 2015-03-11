@@ -55,6 +55,7 @@ Letter template which can be used, if you need to request something with regard 
 * Carsten Hahn
 * Lennard Pfennig
 * Markus Theil
+* René Köllmer
 
 ## Credits
 
