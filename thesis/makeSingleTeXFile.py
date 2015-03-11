@@ -7,29 +7,43 @@ import sys
 import time
 
 # https://zapier.com/engineering/profiling-python-boss/
+def printTimeForTeXInclude(f):
+    def f_timer(*args, **kwargs):
+        start = time.monotonic()
+        result = f(*args, **kwargs)
+        end = time.monotonic()
+        logging.getLogger().info("processed %s.tex --> %.4fs" % (kwargs["texfile"], end - start))
+        return result
+    return f_timer
+
 def printTimeForFunction(f):
     def f_timer(*args, **kwargs):
         start = time.monotonic()
         result = f(*args, **kwargs)
         end = time.monotonic()
-        logging.getLogger().info("%s %s.tex --> %.4fs" % (f.__name__, kwargs["texfile"], end - start))
+        logging.getLogger().info("time for fn: %s --> %.4fs" % (f.__name__, end - start))
         return result
     return f_timer
 
-@printTimeForFunction
+@printTimeForTeXInclude
 def process(texfile, outputFile):
     with open("%s.tex" % texfile, 'r') as texFile:
+        lineNumber = 1
         for line in texFile:
             parts = line.split('%')
             inputFile = re.search("(\\\\input{)(?P<input>.*?)(})", parts[0])
             includeFile = re.search("(\\\\\include{)(?P<include>.*?)(})", parts[0])
             if inputFile:
+                logging.getLogger().info("input %s.tex:%i <-- %s.tex" % (texfile, lineNumber, inputFile.group("input")))
                 process(texfile=inputFile.group("input"), outputFile=outputFile)
             elif includeFile:
+                logging.getLogger().info("include %s.tex:%i <-- %s.tex" % (texfile, lineNumber, includeFile.group("include")))
                 process(texfile=includeFile.group("include"), outputFile=outputFile)
             else:
                 outputFile.write(bytes(line, 'UTF-8'))
+            lineNumber += 1
 
+@printTimeForFunction
 def createLogger():
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
@@ -39,6 +53,7 @@ def createLogger():
     ch.setFormatter(formatter)
     logger.addHandler(ch)
 
+@printTimeForFunction
 def main():
     parser = argparse.ArgumentParser(description='Produces single TeX file by including referenced Tex files.')
     parser.add_argument('--inputFile', type=str, help='file with input/include (w/o .tex)')
