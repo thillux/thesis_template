@@ -21,7 +21,7 @@ German latex templates for thesis writing at Ilmenau University of Technology, t
 ## Usage
 
 ```bash
- scons [expose|letter|slides|thesis]
+ cd expose|letter|slides|thesis && ./build.sh
 ```
 
 ## Contents
