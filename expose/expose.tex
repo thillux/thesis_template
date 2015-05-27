@@ -1,18 +1,29 @@
 \documentclass[fontsize=11pt,%
                paper=a4,%
-               DIV=17]{scrartcl}
+               DIV=15]{scrartcl}
 
+% input encoding
+\usepackage[utf8]{inputenc}
+
+% fonts
 \usepackage[charter]{mathdesign}
 \usepackage[sfdefault,scale=1.1]{sourcesanspro}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+
+% math
 \usepackage{amsmath}
-\usepackage{amsfonts}
+
+% figures with images
 \usepackage{graphicx}
+
+% tables
 \usepackage{tabularx}
-\usepackage{blindtext}
 \usepackage{booktabs}
 
+% filltext
+\usepackage{blindtext}
+
+% German headings and titles
 \usepackage[ngerman]{babel}
 
 \subject{Exposé zur Masterarbeit}
@@ -25,7 +36,7 @@
 
 \section*{Motivation}
 \blindtext
-
+\cite{rfc1337}
 \section*{Aufgabe}
 \blindtext
 
@@ -41,9 +52,8 @@
 \subsection*{Metrik 2}
 \blindtext
 
-\section*{Zeitplan}
-\blindtext
-
 \input{zeitplan}
 
+\bibliographystyle{IEEEtranSA}
+\bibliography{expose}
 \end{document}
