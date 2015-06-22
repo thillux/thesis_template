@@ -92,52 +92,8 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,snakes}
 
-\tikzset{
-	% Styling of header text is done using key/value options for TikZ nodes. See
-	% section 16.4 of the PGF manual for a complete list of options that affect
-	% text.
-	headings/base/.style = {
-		% Zap node seperation, set text width and alignment.
-		outer sep = 0pt,
-		% Trim off 2/3rd of an em to compensate for the inner xsep which spaces the
-		% text nicely away from the left side, but causes the node to hang into the
-		% right margin.
-		text width = {\columnwidth - 0.6666em},
-		align = left
-	},
-	headings/chapter/.style = {
-		outer sep = 0pt,
-		inner sep = 0pt,
-		font = \huge,
-		text = thillux-blue,
-		align = left,
-		text width = \columnwidth
-	},
-	headings/section/.style = {
-		headings/base,
-		fill = thillux-blue,
-		font = \large,
-		minimum height = (1.6em),
-		rectangle,
-		rounded corners,
-		text = white,
-	},
-	headings/subsection/.style = {
-		headings/base,
-		fill = thillux-grey!65,
-		font = \large,
-		minimum height = (1.6em),
-		rectangle,
-		rounded corners,
-		text = white
-	}
-}
 \newcommand{\colorboxedsec}[2]{
 	\tikz{\node[headings/#1]{#2};}}
-
-\setkomafont{chapter}{\colorboxedsec{chapter}}
-\setkomafont{section}{\colorboxedsec{section}}
-\setkomafont{subsection}{\colorboxedsec{subsection}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
