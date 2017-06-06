@@ -1,22 +1,26 @@
 \documentclass[%
- DIV=17,%
+ DIV=15,%
  fontsize=11pt,%
- fromalign=right,%
+ fromalign=left,%
  ngerman,%
  paper=a4,%
  parskip=half*,
+ fromphone=true,%
+ fromemail=true,%
  version=last%
  ]{scrlttr2}
 
+\usepackage[default]{lato}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-
-\usepackage[default]{sourcesanspro}
 
 \usepackage[ngerman]{babel}
 \usepackage{graphicx}
 
 \LoadLetterOption{DIN}
+
+\setkomavar{firstfoot}{\centering \arabic{page}/\pageref{LastPage}}
+\setkomavar{nextfoot}{\centering \arabic{page}/\pageref{LastPage}}
 
 \setkomavar{fromname}{Hans Dampf}
 \setkomavar{fromaddress}{Straße 6\\98693 Ilmenau}
