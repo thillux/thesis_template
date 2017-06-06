@@ -8,7 +8,7 @@
 
 % fonts
 \usepackage[charter]{mathdesign}
-\usepackage[sfdefault,scale=1.1]{sourcesanspro}
+\usepackage{lmodern}
 \usepackage[T1]{fontenc}
 
 % math
@@ -27,17 +27,26 @@
 % German headings and titles
 \usepackage[ngerman]{babel}
 
-\subject{Exposé zur Masterarbeit}
+\usepackage[ngerman,
+            %disable, % disable todos for final version
+            colorinlistoftodos
+           ]{todonotes}
+
+\subject{Exposé zur Bachelorarbeit/Masterarbeit}
 \title{Titel}
 \subtitle{Sekundärtitel}
 \author{Name des Autors}
+\date{\today}
 
 \begin{document}
 \maketitle
 
+\listoftodos
+
 \section*{Motivation}
 \blindtext
 \cite{rfc1337}
+\todo[inline]{Beispiel-To-do}
 
 \section*{Aufgabe}
 \blindtext
@@ -58,4 +67,5 @@
 
 \bibliographystyle{IEEEtranSA}
 \bibliography{expose}
+
 \end{document}
